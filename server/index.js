@@ -46,16 +46,7 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// DEBUG ROUTE: Fix Admin (Run once if login fails)
-app.get('/api/fix-admin', async (req, res) => {
-    // ... existing fix-admin code ...
-    // Note: I previously removed this in the security update. 
-    // I should check if it's there. The user context shows it was removed.
-    // I will append this new route after the login route.
-}); 
-*/
 
-// DEBUG: List All Tables (To verify connection)
 app.get('/api/debug-tables', async (req, res) => {
     try {
         // Try Postgres Syntax
