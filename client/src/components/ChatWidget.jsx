@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { useLanguage } from '../context/LanguageContext';
 import { MessageCircle, X, Send } from 'lucide-react';
 
-const socket = io('http://localhost:3001');
+const socket = io('/'); // Use relative path for production
 
 const ChatWidget = () => {
     const { t } = useLanguage();
