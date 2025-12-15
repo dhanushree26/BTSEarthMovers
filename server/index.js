@@ -47,19 +47,28 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-app.get('/api/debug-tables', async (req, res) => {
+// DEBUG: Auth Diagnostics
+app.get('/api/debug-auth', async (req, res) => {
     try {
-        // Try Postgres Syntax
-        const rows = await db.query("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'");
-        res.json({ database: 'connected', tables: rows });
-    } catch (err) {
-        try {
-            // Fallback to SQLite Syntax (if running locally)
-            const rows = await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'");
-            res.json({ database: 'connected (sqlite)', tables: rows });
-        } catch (sqliteErr) {
-            res.status(500).json({ error: 'Database query failed', details: err.message });
+        const adminRow = await db.get("SELECT * FROM admins WHERE username = 'admin'");
+
+        if (!adminRow) {
+            return res.json({ status: 'error', message: 'Admin user NOT found in database.' });
         }
+
+        const envPass = process.env.ADMIN_PASSWORD || 'admin123';
+        const isMatch = await bcrypt.compare(envPass, adminRow.password);
+
+        res.json({
+            status: 'info',
+            adminUserFound: true,
+            storedHashPrefix: adminRow.password.substring(0, 10) + '...',
+            envPasswordConfigured: !!process.env.ADMIN_PASSWORD,
+            envPasswordLength: envPass.length,
+            testComparisonResult: isMatch ? 'PASS (Passwords match)' : 'FAIL (Database hash does not match ENV password)'
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 
