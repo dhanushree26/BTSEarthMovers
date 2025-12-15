@@ -111,19 +111,19 @@ const Booking = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                     <div className="form-group">
                         <label className="form-label">{t('booking.name')}</label>
-                        <input type="text" name="customerName" value={form.customerName} onChange={handleChange} className="form-control" placeholder="John Doe" required />
+                        <input type="text" name="customerName" value={form.customerName} onChange={handleChange} className="form-control" placeholder="Full Name" required />
                     </div>
 
                     <div className="form-group">
                         <label className="form-label">{t('booking.phone')}</label>
-                        <input type="tel" name="phone" value={form.phone} onChange={handleChange} className="form-control" placeholder="9876543210" required />
+                        <input type="tel" name="phone" value={form.phone} onChange={handleChange} className="form-control" placeholder="Mobile Number" required />
                         <small style={{ color: '#888' }}>10-digit mobile number</small>
                     </div>
                 </div>
 
                 <div className="form-group">
                     <label className="form-label">{t('booking.email')}</label>
-                    <input type="email" name="email" value={form.email} onChange={handleChange} className="form-control" placeholder="john@example.com" required />
+                    <input type="email" name="email" value={form.email} onChange={handleChange} className="form-control" placeholder="xyz@example.com" required />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
