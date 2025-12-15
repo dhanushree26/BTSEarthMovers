@@ -73,9 +73,27 @@ app.get('/api/debug-auth', async (req, res) => {
 });
 
 // Get Bookings (Admin)
+// Get Bookings (Admin)
 app.get('/api/bookings', async (req, res) => {
     try {
-        const rows = await db.query('SELECT * FROM bookings ORDER BY timestamp DESC');
+        // Postgres lowercases column names by default. We use aliases to restore camelCase for the frontend.
+        // This query works for both SQLite and Postgres.
+        const query = `
+            SELECT 
+                id, 
+                customerName as "customerName", 
+                phone, 
+                email, 
+                equipmentId as "equipmentId", 
+                startDate as "startDate", 
+                endDate as "endDate", 
+                status, 
+                language, 
+                timestamp 
+            FROM bookings 
+            ORDER BY timestamp DESC
+        `;
+        const rows = await db.query(query);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: err.message });
