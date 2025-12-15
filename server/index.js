@@ -140,7 +140,7 @@ io.on('connection', (socket) => {
 });
 
 // Catch-All Handler (Serve React App for any unmatched route)
-app.get('*', (req, res) => {
+app.get(/(.*)/, (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
