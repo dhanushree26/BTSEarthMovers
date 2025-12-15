@@ -3,9 +3,9 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const db = require('./database');
-require('dotenv').config();
-
+const bcrypt = require('bcryptjs');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
@@ -24,14 +24,20 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // API ROUTES
 
-// Login
+// Login (SECURE)
 app.post('/api/login', async (req, res) => {
     try {
         const { username, password } = req.body;
-        const row = await db.get('SELECT * FROM admins WHERE username = ? AND password = ?', [username, password]);
+        const row = await db.get('SELECT * FROM admins WHERE username = ?', [username]);
 
         if (row) {
-            res.json({ success: true, token: 'mock-jwt-token-123', username: row.username });
+            // Compare Hashed Password
+            const match = await bcrypt.compare(password, row.password);
+            if (match) {
+                res.json({ success: true, token: 'mock-jwt-token-123', username: row.username });
+            } else {
+                res.status(401).json({ error: 'Invalid credentials' });
+            }
         } else {
             res.status(401).json({ error: 'Invalid credentials' });
         }
