@@ -1,4 +1,3 @@
-const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const { Pool } = require('pg');
 require('dotenv').config();
@@ -19,6 +18,7 @@ if (isProduction) {
     });
 } else {
     // SQLite (Local Development)
+    const sqlite3 = require('sqlite3').verbose();
     console.log('🔌 Connecting to SQLite (Local)...');
     mode = 'sqlite';
     const dbPath = path.resolve(__dirname, 'earthmovers.db');
