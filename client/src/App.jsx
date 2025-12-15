@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import CallButton from './components/CallButton';
 import Home from './pages/Home';
@@ -13,6 +14,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 function App() {
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <ScrollToTop />
       <Navbar />
       <div style={{ flex: 1 }}>
         <Routes>
