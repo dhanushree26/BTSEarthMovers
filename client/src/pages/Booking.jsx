@@ -62,7 +62,7 @@ const Booking = () => {
 
         setStatus('submitting');
         try {
-            await axios.post('http://localhost:3001/api/bookings', form);
+            await axios.post('/api/bookings', form);
             setStatus('success');
         } catch (err) {
             console.error(err);
