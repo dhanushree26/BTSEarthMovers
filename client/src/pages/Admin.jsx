@@ -19,7 +19,7 @@ const Admin = () => {
 
     const fetchBookings = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/bookings');
+            const res = await axios.get('/api/bookings');
             setBookings(res.data);
         } catch (err) {
             console.error(err);
@@ -28,7 +28,7 @@ const Admin = () => {
 
     const updateStatus = async (id, newStatus) => {
         try {
-            await axios.put(`http://localhost:3001/api/bookings/${id}/status`, { status: newStatus });
+            await axios.put(`/api/bookings/${id}/status`, { status: newStatus });
             fetchBookings(); // Refresh immediately
         } catch (err) {
             console.error("Failed to update status", err);
@@ -38,7 +38,7 @@ const Admin = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3001/api/login', loginForm);
+            const res = await axios.post('/api/login', loginForm);
             if (res.data.success) {
                 setAuth(true);
                 setError('');
