@@ -46,6 +46,32 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
+// DEBUG ROUTE: Fix Admin (Run once if login fails)
+app.get('/api/fix-admin', async (req, res) => {
+    // ... existing fix-admin code ...
+    // Note: I previously removed this in the security update. 
+    // I should check if it's there. The user context shows it was removed.
+    // I will append this new route after the login route.
+}); 
+*/
+
+// DEBUG: List All Tables (To verify connection)
+app.get('/api/debug-tables', async (req, res) => {
+    try {
+        // Try Postgres Syntax
+        const rows = await db.query("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'");
+        res.json({ database: 'connected', tables: rows });
+    } catch (err) {
+        try {
+            // Fallback to SQLite Syntax (if running locally)
+            const rows = await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'");
+            res.json({ database: 'connected (sqlite)', tables: rows });
+        } catch (sqliteErr) {
+            res.status(500).json({ error: 'Database query failed', details: err.message });
+        }
+    }
+});
+
 // Get Bookings (Admin)
 app.get('/api/bookings', async (req, res) => {
     try {
