@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Equipment | BTS Earth Movers</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .error-msg {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-box {
+            background: #dff0d8;
+            color: #3c763d;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #d6e9c6;
+            display: none;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="equipment.html">Equipment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html" class="active" style="color: #FFD700;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section-padding">
+        <div class="text-center" style="margin-bottom: 3rem;">
+            <h1>Book Your Equipment</h1>
+            <p>Fill out the form below to request a reservation. We will contact you to confirm details.</p>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div id="success-message" class="success-box">
+                <strong><i class="fas fa-check-circle"></i> Request Received!</strong><br>
+                Thank you for your booking request. Our team will contact you shortly to finalize the rental.
+            </div>
+
+            <form id="booking-form"
+                style="background: #f9f9f9; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+
+                <h3 style="border-bottom: 2px solid #FFD700; display: inline-block; margin-bottom: 1.5rem;">Rental
+                    Details</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="equipment-select">Select Equipment</label>
+                    <select id="equipment-select" class="form-control" required>
+                        <option value="">-- Choose Machine --</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <div class="error-msg">Please select a machine.</div>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label" for="start-date">Start Date</label>
+                        <input type="date" id="start-date" class="form-control" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label" for="end-date">End Date</label>
+                        <input type="date" id="end-date" class="form-control" required>
+                    </div>
+                </div>
+
+                <h3
+                    style="border-bottom: 2px solid #FFD700; display: inline-block; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    Your Information</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="full-name">Full Name / Company</label>
+                    <input type="text" id="full-name" class="form-control" placeholder="e.g. John Doe or Acme Corp"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="(555) 123-4567" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="notes">Additional Notes</label>
+                    <textarea id="notes" class="form-control" rows="4"
+                        placeholder="Delivery instructions, specific requirements, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn"
+                    style="width: 100%; border: none; font-size: 1.1rem; padding: 15px;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                    <p style="margin-top: 1rem;">Your trusted partner for heavy construction equipment rentals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Industry City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@btsearthmovers.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> BTS Earth Movers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectInfo = document.getElementById('equipment-select');
+            const urlParams = new URLSearchParams(window.location.search);
+            const preSelectId = urlParams.get('id');
+
+            // Populate Select Options
+            equipmentData.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.id;
+                option.textContent = `${item.name} ($${item.price}/day)`;
+                if (item.id === preSelectId) {
+                    option.selected = true;
+                }
+                selectInfo.appendChild(option);
+            });
+
+            // Date Validation Logic
+            const startDate = document.getElementById('start-date');
+            const endDate = document.getElementById('end-date');
+
+            // Set min date to today
+            const today = new Date().toISOString().split('T')[0];
+            startDate.min = today;
+            endDate.min = today;
+
+            startDate.addEventListener('change', () => {
+                endDate.min = startDate.value;
+            });
+
+            // Form Submission
+            const form = document.getElementById('booking-form');
+            const successMsg = document.getElementById('success-message');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simulation of API call
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.textContent = 'Processing...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    window.scrollTo(0, 0);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+
+</html>

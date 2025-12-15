@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Details | BTS Earth Movers</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="equipment.html">Equipment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html" class="btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section-padding">
+        <a href="equipment.html" style="display: inline-block; margin-bottom: 2rem; color: #666;"><i
+                class="fas fa-arrow-left"></i> Back to Gallery</a>
+
+        <div id="detail-container">
+            <!-- Populated by JS -->
+            <div style="text-align: center; padding: 5rem;">Loading equipment details...</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                    <p style="margin-top: 1rem;">Your trusted partner for heavy construction equipment rentals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Industry City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@btsearthmovers.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> BTS Earth Movers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('detail-container');
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            const item = equipmentData.find(e => e.id === id);
+
+            if (item) {
+                // Update Title
+                document.title = `${item.name} | BTS Earth Movers`;
+
+                let specsHtml = '';
+                for (const [key, value] of Object.entries(item.specs)) {
+                    // Capitalize key
+                    const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                    specsHtml += `
+                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #ddd;">
+                            <span style="font-weight: bold; color: #555;">${label}</span>
+                            <span>${value}</span>
+                        </div>
+                    `;
+                }
+
+                container.innerHTML = `
+                    <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+                        <div style="flex: 1 1 500px;">
+                            <img src="${item.image}" alt="${item.name}" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        <div style="flex: 1 1 400px;">
+                            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">${item.name}</h1>
+                            <div style="color: #FFD700; font-weight: bold; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1.5rem;">${item.type}</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: #444;">${item.shortDesc} This machine represents the top tier of performance in the ${item.type} category, designed for maximum efficiency and operator comfort.</p>
+                            
+                            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                                <h3 style="border-bottom: 3px solid #FFD700; display: inline-block; margin-bottom: 1.5rem;">Specifications</h3>
+                                ${specsHtml}
+                            </div>
+
+                            <div style="display: flex;align-items: center; gap: 2rem;">
+                                <div>
+                                    <span style="display: block; font-size: 0.9rem; color: #666;">Daily Rate</span>
+                                    <span style="font-size: 2rem; font-weight: bold; color: #333;">$${item.price}</span>
+                                </div>
+                                <a href="booking.html?id=${item.id}" class="btn" style="flex-grow: 1; text-align: center;">Book This Machine</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 4rem;">
+                        <h2>Equipment Not Found</h2>
+                        <p>Sorry, the equipment ID "${id}" does not exist.</p>
+                        <a href="equipment.html" class="btn" style="margin-top: 1rem;">Back to Gallery</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>

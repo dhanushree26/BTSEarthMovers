@@ -1,0 +1,16 @@
+{
+    "name": "bts-earth-movers-root",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "dev": "npm start",
+        "server": "cd server && npm run dev",
+        "client": "cd client && npm run dev",
+        "install:all": "cd client && npm install && cd ../server && npm install",
+        "build": "cd client && npm install && npm run build && cd ../server && npm install"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.0"
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Gallery | BTS Earth Movers</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="equipment.html" class="active" style="color: #FFD700;">Equipment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html" class="btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div style="background-color: #333; color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h1>Our Equipment Fleet</h1>
+            <p>Browse our extensive inventory of heavy machinery ready for your project.</p>
+        </div>
+    </div>
+
+    <!-- Filter Section (Placeholder Logic) -->
+    <div class="container" style="padding: 2rem 0; text-align: center;">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all"
+                style="padding: 10px 20px; border: 1px solid #ddd; background: #FFD700; cursor: pointer; border-radius: 4px; font-weight: bold; margin: 5px;">All</button>
+            <button class="filter-btn" data-filter="bulldozer"
+                style="padding: 10px 20px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px; margin: 5px;">Bulldozers</button>
+            <button class="filter-btn" data-filter="excavator"
+                style="padding: 10px 20px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px; margin: 5px;">Excavators</button>
+            <button class="filter-btn" data-filter="grader"
+                style="padding: 10px 20px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px; margin: 5px;">Graders</button>
+            <button class="filter-btn" data-filter="dump-truck"
+                style="padding: 10px 20px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px; margin: 5px;">Dump
+                Trucks</button>
+        </div>
+    </div>
+
+    <!-- Equipment Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div id="equipment-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">BTS <span>EARTH MOVERS</span></div>
+                    <p style="margin-top: 1rem;">Your trusted partner for heavy construction equipment rentals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="booking.html">Book Online</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- ...same footer cols... -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Industry City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@btsearthmovers.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> BTS Earth Movers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('equipment-grid');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            function renderGrid(filterType) {
+                grid.innerHTML = '';
+                const filtered = filterType === 'all'
+                    ? equipmentData
+                    : equipmentData.filter(item => item.type === filterType);
+
+                filtered.forEach(item => {
+                    const card = document.createElement('div');
+                    card.innerHTML = `
+                        <div style="border: 1px solid #ddd; background: #fff; transition: all 0.3s; height: 100%; display: flex; flex-direction: column;">
+                            <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 220px; object-fit: cover;">
+                            <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">${item.name}</h3>
+                                <div style="color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 1rem;">${item.type}</div>
+                                <p style="margin-bottom: 1.5rem; flex-grow: 1;">${item.shortDesc}</p>
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 1rem;">
+                                    <span style="font-weight: bold; font-size: 1.2rem; color: #333;">$${item.price} <span style="font-size: 0.8rem; font-weight: normal; color: #666;">/ day</span></span>
+                                    <a href="equipment-detail.html?id=${item.id}" class="btn" style="padding: 10px 20px;">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            // Initial Render
+            renderGrid('all');
+
+            // Filter Click Handler
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update Active State
+                    btns.forEach(b => {
+                        b.classList.remove('active');
+                        b.style.backgroundColor = '#fff';
+                    });
+                    btn.classList.add('active');
+                    btn.style.backgroundColor = '#FFD700';
+
+                    // Filter
+                    renderGrid(btn.getAttribute('data-filter'));
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
