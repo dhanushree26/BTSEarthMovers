@@ -1,0 +1,278 @@
+/* Mobile Responsive Styles for Booking Page */
+/* Desktop layout remains unchanged - only adding mobile overrides */
+
+/* ================= MOBILE RESPONSIVE STYLES ================= */
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .booking-header {
+    margin-bottom: 2rem !important;
+    padding: 0 1rem;
+  }
+
+  .booking-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .booking-subtitle {
+    font-size: 1rem !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Form container */
+  .booking-form {
+    padding: 2rem 1.5rem !important;
+    margin: 0 1rem !important;
+    max-width: none !important;
+  }
+
+  /* Stack form rows vertically on mobile */
+  .booking-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Form elements */
+  .form-group {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .form-label {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .form-control {
+    padding: 14px 16px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 8px !important;
+  }
+
+  /* Select dropdown */
+  select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px !important;
+  }
+
+  /* Submit button */
+  .booking-submit-btn {
+    padding: 16px 20px !important;
+    font-size: 1rem !important;
+    margin-top: 2rem !important;
+    border-radius: 8px !important;
+    min-height: 56px; /* Touch-friendly height */
+  }
+
+  /* Success message */
+  .booking-success-message {
+    padding: 2rem 1.5rem !important;
+    margin: 0 1rem !important;
+    max-width: none !important;
+  }
+
+  .booking-success-message h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .booking-success-message p {
+    font-size: 1rem !important;
+  }
+
+  /* Validation error */
+  .booking-validation-error {
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+
+  /* Small text adjustments */
+  small {
+    font-size: 0.85rem !important;
+    display: block !important;
+    margin-top: 4px !important;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  /* Header */
+  .booking-header {
+    margin-bottom: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .booking-title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .booking-subtitle {
+    font-size: 0.9rem !important;
+    padding: 0 0.25rem;
+  }
+
+  /* Form container */
+  .booking-form {
+    padding: 1.5rem 1rem !important;
+    margin: 0 0.5rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Form elements */
+  .form-group {
+    margin-bottom: 1rem !important;
+  }
+
+  .form-label {
+    font-size: 0.9rem !important;
+  }
+
+  .form-control {
+    padding: 12px 14px !important;
+    font-size: 16px !important;
+  }
+
+  /* Submit button */
+  .booking-submit-btn {
+    padding: 14px 18px !important;
+    font-size: 0.95rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* Success message */
+  .booking-success-message {
+    padding: 1.5rem 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .booking-success-message h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .booking-success-message p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Validation error */
+  .booking-validation-error {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Small text */
+  small {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Extra Small Mobile - 360px and below */
+@media (max-width: 360px) {
+  /* Header */
+  .booking-title {
+    font-size: 1.75rem !important;
+  }
+
+  .booking-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  /* Form container */
+  .booking-form {
+    padding: 1.25rem 0.75rem !important;
+    margin: 0 0.25rem !important;
+  }
+
+  /* Form elements */
+  .form-control {
+    padding: 10px 12px !important;
+  }
+
+  /* Submit button */
+  .booking-submit-btn {
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Success message */
+  .booking-success-message {
+    padding: 1.25rem 0.75rem !important;
+    margin: 0 0.25rem !important;
+  }
+}
+
+/* ================= TOUCH AND ACCESSIBILITY IMPROVEMENTS ================= */
+
+@media (max-width: 768px) {
+  /* Ensure all interactive elements are touch-friendly */
+  .form-control,
+  .btn,
+  select {
+    min-height: 44px; /* Apple's recommended minimum touch target */
+  }
+
+  /* Improve focus states for mobile */
+  .form-control:focus {
+    outline: none !important;
+    border-color: #FF9F1C !important;
+    box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.2) !important;
+  }
+
+  /* Better button states */
+  .booking-submit-btn:active {
+    transform: translateY(1px);
+  }
+
+  .booking-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Prevent horizontal overflow */
+  .booking-form,
+  .booking-success-message {
+    overflow-x: hidden;
+    word-wrap: break-word;
+  }
+}
+
+/* ================= LANDSCAPE MOBILE ADJUSTMENTS ================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .booking-header {
+    margin-bottom: 1rem !important;
+  }
+
+  .booking-title {
+    font-size: 2rem !important;
+  }
+
+  .booking-form {
+    padding: 1.5rem !important;
+  }
+
+  .form-group {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* ================= PRINT STYLES ================= */
+
+@media print {
+  .booking-form {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    padding: 1rem !important;
+  }
+
+  .booking-submit-btn {
+    display: none !important;
+  }
+}

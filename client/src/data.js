@@ -1,66 +1,157 @@
 export const equipmentData = [
+    // Excavators
     {
-        id: 'bd-01',
-        type: 'bulldozer',
-        name: 'CAT D6 Dozer',
-        shortDesc: 'Heavy-duty dozer for large earthmoving projects.',
+        id: 'ex-380',
+        type: 'excavator',
+        name: 'Excavator 380',
+        shortDesc: 'Heavy-duty excavator for large construction projects.',
+        image: '/excavator300.png',
+        specs: { quantity: '4 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-215',
+        type: 'excavator',
+        name: 'Excavator 215',
+        shortDesc: 'Medium-sized excavator for versatile earthmoving operations.',
+        image: '/excavator215.png',
+        specs: { quantity: '2 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-210',
+        type: 'excavator',
+        name: 'Excavator 210',
+        shortDesc: 'Reliable excavator for construction and mining applications.',
+        image: '/210.png',
+        specs: { quantity: '7 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-200',
+        type: 'excavator',
+        name: 'Excavator 200',
+        shortDesc: 'Efficient excavator for medium-scale projects.',
+        image: '/200.png',
+        specs: { quantity: '4 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-140',
+        type: 'excavator',
+        name: 'Excavator 140',
+        shortDesc: 'Compact excavator for urban construction work.',
+        image: '/140.png',
+        specs: { quantity: '6 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-130',
+        type: 'excavator',
+        name: 'Excavator 130',
+        shortDesc: 'Small excavator for precision work.',
+        image: '/130.png',
+        specs: { quantity: '1 No', category: 'Excavators' }
+    },
+    {
+        id: 'ex-110',
+        type: 'excavator',
+        name: 'Excavator 110',
+        shortDesc: 'Compact excavator for tight spaces.',
+        image: '/110.png',
+        specs: { quantity: '4 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-81',
+        type: 'excavator',
+        name: 'Excavator 81',
+        shortDesc: 'Mini excavator for detailed excavation work.',
+        image: '/81.png',
+        specs: { quantity: '1 No', category: 'Excavators' }
+    },
+    {
+        id: 'ex-80',
+        type: 'excavator',
+        name: 'Excavator 80',
+        shortDesc: 'Mini excavator for landscaping and utility work.',
+        image: '/80.png',
+        specs: { quantity: '2 Nos', category: 'Excavators' }
+    },
+    {
+        id: 'ex-30',
+        type: 'excavator',
+        name: 'Excavator 30',
+        shortDesc: 'Ultra-compact excavator for confined areas.',
+        image: '/30.png',
+        specs: { quantity: '2 Nos', category: 'Excavators' }
+    },
+    // Loaders
+    {
+        id: 'bl-jcb',
+        type: 'loader',
+        name: 'Backhoe Loader (JCB)',
+        shortDesc: 'Versatile backhoe loader for digging and loading operations.',
+        image: '/BackhoeLoader(JCB).png',
+        specs: { quantity: '5 Nos', category: 'Loaders' }
+    },
+    // Compaction & Support Equipment
+    {
+        id: 'sc-big',
+        type: 'compactor',
+        name: 'Soil Compactor (Big Roller)',
+        shortDesc: 'Heavy-duty soil compactor for large area compaction.',
+        image: '/bigroller.png',
+        specs: { quantity: '5 Nos', category: 'Compaction & Support Equipment' }
+    },
+    {
+        id: 'mr-01',
+        type: 'roller',
+        name: 'Mini Roller',
+        shortDesc: 'Compact roller for small area compaction.',
+        image: '/miniroller.png',
+        specs: { quantity: '3 Nos', category: 'Compaction & Support Equipment' }
+    },
+    {
+        id: 'hr-01',
+        type: 'roller',
+        name: 'Hand Roller',
+        shortDesc: 'Manual roller for precise compaction work.',
+        image: '/handroller.png',
+        specs: { quantity: '3 Nos', category: 'Compaction & Support Equipment' }
+    },
+    {
+        id: 'ss-01',
+        type: 'skid-steer',
+        name: 'Skid Steer',
+        shortDesc: 'Compact skid steer loader for material handling.',
+        image: '/SkidSteer.png',
+        specs: { quantity: '2 Nos', category: 'Compaction & Support Equipment' }
+    },
+    {
+        id: 'dz-01',
+        type: 'dozer',
+        name: 'Dozer',
+        shortDesc: 'Bulldozer for earthmoving and grading operations.',
         image: 'https://images.unsplash.com/photo-1527685216219-c8b4c0d486d9?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '215 HP', weight: '41,000 lbs', bladeWidth: '10.5 ft' }
-    },
-    {
-        id: 'ex-01',
-        type: 'excavator',
-        name: 'Komatsu PC210',
-        shortDesc: 'Versatile hydraulic excavator with high efficiency.',
-        image: 'https://images.unsplash.com/photo-1582234032483-cda9c4768393?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '165 HP', digDepth: '22 ft', bucketCapacity: '1.5 yd³' }
-    },
-    {
-        id: 'gr-01',
-        type: 'grader',
-        name: 'John Deere 772G',
-        shortDesc: 'Precise grading for road construction and maintenance.',
-        image: 'https://images.unsplash.com/photo-1620808004724-406cb7b03e00?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '275 HP', bladeWidth: '14 ft', weight: '43,000 lbs' }
-    },
-    {
-        id: 'dt-01',
-        type: 'dump-truck',
-        name: 'Volvo A40G',
-        shortDesc: 'Articulated hauler made for severe off-road operations.',
-        image: 'https://images.unsplash.com/photo-1591796796544-77cc67773299?q=80&w=800&auto=format&fit=crop',
-        specs: { payload: '40 tons', power: '469 HP', speed: '35 mph' }
-    },
-    {
-        id: 'bd-02',
-        type: 'bulldozer',
-        name: 'CAT D8T',
-        shortDesc: 'Massive power for the toughest mining and construction jobs.',
-        image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '312 HP', weight: '87,000 lbs', bladeWidth: '12 ft' }
-    },
-    {
-        id: 'ex-02',
-        type: 'excavator',
-        name: 'Hitachi ZX350',
-        shortDesc: 'Medium excavator perfect for urban construction.',
-        image: 'https://images.unsplash.com/photo-1581094794329-cd811969d39b?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '271 HP', digDepth: '24 ft', bucketCapacity: '2.0 yd³' }
+        specs: { quantity: '1 No', category: 'Compaction & Support Equipment' }
     },
     {
         id: 'cr-01',
         type: 'crane',
-        name: 'Liebherr Mobile Crane',
-        shortDesc: 'All-terrain mobile crane for lifting heavy loads.',
-        image: 'https://images.unsplash.com/photo-1582234032483-cda9c4768393?q=80&w=800&auto=format&fit=crop', // Reusing placeholder
-        specs: { capacity: '50 tons', boomLength: '120 ft', axles: '3' }
+        name: 'Crane',
+        shortDesc: 'Mobile crane for lifting and positioning heavy materials.',
+        image: 'https://images.unsplash.com/photo-1582234032483-cda9c4768393?q=80&w=800&auto=format&fit=crop',
+        specs: { quantity: '1 No', category: 'Compaction & Support Equipment' }
     },
     {
-        id: 'wl-01',
-        type: 'loader',
-        name: 'CAT 950 Wheel Loader',
-        shortDesc: 'Premium wheel loader for material handling.',
-        image: 'https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?q=80&w=800&auto=format&fit=crop',
-        specs: { power: '250 HP', bucket: '4.0 yd³', weight: '40,000 lbs' }
+        id: 'tr-01',
+        type: 'trailer',
+        name: 'Trailer',
+        shortDesc: 'Heavy-duty trailer for equipment transportation.',
+        image: 'https://images.unsplash.com/photo-1591796796544-77cc67773299?q=80&w=800&auto=format&fit=crop',
+        specs: { quantity: '4 Nos', category: 'Compaction & Support Equipment' }
+    },
+    {
+        id: 'tp-01',
+        type: 'tipper',
+        name: 'Tipper',
+        shortDesc: 'Tipper truck for material hauling and dumping.',
+        image: 'https://images.unsplash.com/photo-1591796796544-77cc67773299?q=80&w=800&auto=format&fit=crop',
+        specs: { quantity: '9 Nos', category: 'Compaction & Support Equipment' }
     }
 ];

@@ -1,0 +1,217 @@
+/* Mobile Responsive Styles for Equipment Page */
+/* Desktop layout remains unchanged - only adding mobile overrides */
+
+/* Mobile - 768px and below */
+@media (max-width: 768px) {
+  /* Container padding adjustment */
+  .equipment-container {
+    padding: 1rem 0.5rem !important;
+  }
+
+  /* Title adjustments */
+  .equipment-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .equipment-subtitle {
+    font-size: 1rem !important;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* Filter bar mobile optimization */
+  .equipment-filters {
+    margin-bottom: 1.5rem !important;
+    padding: 10px 1rem !important;
+  }
+
+  .equipment-filter-button {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    min-width: auto !important;
+    white-space: nowrap;
+  }
+
+  /* Grid adjustments for mobile */
+  .equipment-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem;
+  }
+
+  /* Card adjustments */
+  .equipment-card {
+    margin: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .equipment-card-image {
+    height: 180px !important;
+  }
+
+  .equipment-card-content {
+    padding: 1rem !important;
+  }
+
+  .equipment-card-title {
+    font-size: 1.1rem !important;
+    line-height: 1.3;
+  }
+
+  .equipment-card-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .equipment-specs {
+    padding: 8px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .equipment-button {
+    padding: 10px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  .equipment-container {
+    padding: 1rem 0.25rem !important;
+  }
+
+  .equipment-title {
+    font-size: 1.75rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .equipment-subtitle {
+    font-size: 0.9rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .equipment-filters {
+    padding: 10px 0.5rem !important;
+  }
+
+  .equipment-filter-button {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .equipment-grid {
+    gap: 1rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .equipment-card-image {
+    height: 160px !important;
+  }
+
+  .equipment-card-content {
+    padding: 0.75rem !important;
+  }
+
+  .equipment-card-title {
+    font-size: 1rem !important;
+  }
+
+  .equipment-card-description {
+    font-size: 0.85rem !important;
+  }
+
+  .equipment-specs {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Hide scrollbar for filter buttons on mobile */
+@media (max-width: 768px) {
+  .equipment-filters::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .equipment-filters {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ================= MOBILE FILTER MODAL ================= */
+
+/* Hide mobile filter trigger on desktop */
+.mobile-filter-trigger {
+  display: none;
+}
+
+/* Show desktop filters by default */
+.desktop-filters {
+  display: flex;
+}
+
+/* Slide up animation for mobile modal */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile - 768px and below */
+@media (max-width: 768px) {
+  /* Hide desktop filters on mobile */
+  .desktop-filters {
+    display: none !important;
+  }
+
+  /* Show mobile filter trigger */
+  .mobile-filter-trigger {
+    display: block !important;
+    text-align: center;
+  }
+
+  /* Mobile filter overlay */
+  .mobile-filter-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Mobile filter panel */
+  .mobile-filter-panel {
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Ensure modal is above everything */
+  .mobile-filter-overlay {
+    z-index: 9999 !important;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  .mobile-filter-panel {
+    padding: 1.25rem !important;
+    border-radius: 16px 16px 0 0 !important;
+  }
+
+  .mobile-filter-trigger button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}

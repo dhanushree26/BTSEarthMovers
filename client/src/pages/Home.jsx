@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { equipmentData } from '../data';
 import { Star, Truck, Shield, Clock, Award, ArrowRight } from 'lucide-react';
 import heroVideo from '../assets/Sunrise_Construction_Site_Cinematic_Video.mp4';
+import ServicesSection from '../components/ServicesSection';
 import './Home.css';
 
 const Home = () => {
@@ -61,29 +62,46 @@ const Home = () => {
                 display: 'flex',
                 alignItems: 'center',
                 color: 'white',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                background: '#333' // Fallback background
             }}>
-                {/* Raw HTML Video Injection */}
-                <div
-                    dangerouslySetInnerHTML={videoMarkup}
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
-                />
+                {/* Video Background - Fixed */}
+                <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    preload="auto"
+                    style={{ 
+                        position: 'absolute', 
+                        top: 0, 
+                        left: 0, 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover', 
+                        zIndex: -2 
+                    }}
+                >
+                    <source src={heroVideo} type="video/mp4" />
+                </video>
+                
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', zIndex: -1 }}></div>
 
-                <div className="container" style={{ width: '100%', position: 'relative', zIndex: 1 }}>
-                    <div style={{ background: '#333', color: '#FF9F1C', display: 'inline-block', padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                <div className="container hero-container" style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+                    <div className="hero-badge" style={{ background: '#333', color: '#FF9F1C', display: 'inline-block', padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                         Trusted by 500+ Contractors
                     </div>
-                    <h1 style={{ fontSize: '4.5rem', lineHeight: '1', marginBottom: '1.5rem', color: 'white', maxWidth: '800px' }}>
-                        HEAVY EQUIPMENT <span style={{ color: '#FF9F1C' }}>RENTALS</span>
+                    <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1', marginBottom: '1.5rem', color: 'white', maxWidth: '800px' }}>
+                        HEAVY EQUIPMENT <span className="hero-highlight" style={{ color: '#FF9F1C' }}>RENTALS</span>
                     </h1>
-                    <p style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '600px', color: '#ddd' }}>
+                    <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '600px', color: '#ddd' }}>
                         {t('hero.subtitle')}
                     </p>
-                    <div style={{ display: 'flex', gap: '1rem' }}>
-                        <Link to="/equipment" className="btn" style={{ padding: '16px 32px', fontSize: '1.1rem' }}>
+                    <div className="hero-buttons" style={{ display: 'flex', gap: '1rem' }}>
+                        <Link to="/equipment" className="btn hero-btn-primary" style={{ padding: '16px 32px', fontSize: '1.1rem' }}>
                             Browse Equipment <ArrowRight size={20} style={{ verticalAlign: 'middle', marginLeft: '5px' }} />
                         </Link>
-                        <Link to="/booking" className="btn btn-secondary" style={{ padding: '16px 32px', color: 'white', borderColor: 'white' }}>
+                        <Link to="/booking" className="btn btn-secondary hero-btn-secondary" style={{ padding: '16px 32px', color: 'white', borderColor: 'white' }}>
                             {t('hero.cta2')}
                         </Link>
                     </div>
@@ -140,6 +158,8 @@ const Home = () => {
   </div>
 </section>
 
+            {/* Services Section */}
+            <ServicesSection />
 
             {/* Stats Section */}
             <section className="stats-section">

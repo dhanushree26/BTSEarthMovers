@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, Globe, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const { lang, switchLanguage, t } = useLanguage();
@@ -17,11 +18,15 @@ const Navbar = () => {
 
         {/* LOGO */}
         <Link to="/" className="logo-wrap" onClick={() => setIsMenuOpen(false)}>
-          <div className="logo-badge">BTS</div>
-          <div className="logo-text">
-            <span className="logo-title">EARTH MOVERS</span>
-            <span className="logo-sub">Equipment Rentals</span>
-          </div>
+          <img 
+            src={logo} 
+            alt="BTS Earth Movers" 
+            style={{ 
+              height: '50px', 
+              width: 'auto', 
+              objectFit: 'contain' 
+            }} 
+          />
         </Link>
 
         {/* MOBILE MENU ICON */}
