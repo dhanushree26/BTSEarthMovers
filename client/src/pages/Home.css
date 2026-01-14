@@ -520,10 +520,12 @@
 }
 /* ================= HERO SECTION MOBILE RESPONSIVE ================= */
 
-/* Hero section and video - ensure full coverage */
+/* Hero section - ensure no overflow */
 .hero-section {
   position: relative;
   overflow: hidden;
+  margin-top: -100px; /* Offset body padding on desktop */
+  padding-top: 100px; /* Maintain internal spacing */
 }
 
 .hero-video {
@@ -547,6 +549,12 @@
 
 /* Mobile - 768px and below */
 @media (max-width: 768px) {
+  /* Remove negative margin on mobile */
+  .hero-section {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
   /* Make hero section full viewport height */
   .hero-section {
     height: 100vh !important;
