@@ -13,8 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="glass-navbar">
-      <div className="nav-inner">
+    <header className="floating-navbar-wrapper">
+      <div className="floating-navbar">
 
         {/* LOGO */}
         <Link to="/" className="logo-wrap" onClick={() => setIsMenuOpen(false)}>
@@ -22,7 +22,7 @@ const Navbar = () => {
             src={logo} 
             alt="BTS Earth Movers" 
             style={{ 
-              height: '50px', 
+              height: '45px', 
               width: 'auto', 
               objectFit: 'contain' 
             }} 
@@ -67,40 +67,36 @@ const Navbar = () => {
       {/* CSS */}
       <style>{`
 /* ================================
-   GLOBAL RESET
+   FLOATING NAVBAR WRAPPER
 ================================ */
-html, body {
-  margin: 0;
-  padding: 0;
+.floating-navbar-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 /* ================================
-   GLASS NAVBAR (DESKTOP + MOBILE)
+   FLOATING PILL NAVBAR
 ================================ */
-.glass-navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.floating-navbar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
 
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    0 12px 30px rgba(0,0,0,0.12);
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
-  border-radius: 0 0 22px 22px;
-}
-
-/* NAV INNER */
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 80px;
-
+  padding: 12px 24px;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -112,33 +108,13 @@ html, body {
 .logo-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
+  padding: 4px 8px;
+  transition: transform 0.3s ease;
 }
 
-.logo-badge {
-  background: rgba(255,159,28,0.85);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  color: #111;
-  font-weight: 800;
-  font-size: 1.2rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-}
-
-.logo-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111;
-  letter-spacing: 1px;
-}
-
-.logo-sub {
-  font-size: 0.7rem;
-  color: #666;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.logo-wrap:hover {
+  transform: scale(1.05);
 }
 
 /* ================================
@@ -147,13 +123,35 @@ html, body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 32px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #111;
   font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #FF9F1C;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF9F1C;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* ================================
@@ -164,27 +162,46 @@ html, body {
   align-items: center;
   gap: 6px;
 
-  background: rgba(255,255,255,0.4);
+  background: rgba(17, 17, 17, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(17, 17, 17, 0.12);
 
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  border-radius: 50px;
   cursor: pointer;
   color: #111;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(17, 17, 17, 0.12);
+  border-color: rgba(17, 17, 17, 0.2);
 }
 
 /* ================================
    QUOTE BUTTON
 ================================ */
 .quote-btn {
-  background: rgba(255,159,28,0.85);
-  backdrop-filter: blur(10px);
-  color: #111;
-  padding: 10px 22px;
-  border-radius: 10px;
+  background: #FF9F1C;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 159, 28, 0.3);
+}
+
+.quote-btn:hover {
+  background: #e68a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 159, 28, 0.5);
+  color: #fff;
+}
+
+.quote-btn::after {
+  display: none;
 }
 
 /* ================================
@@ -192,43 +209,57 @@ html, body {
 ================================ */
 .mobile-menu-btn {
   display: none;
-  background: transparent;
-  border: none;
+  background: rgba(17, 17, 17, 0.08);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 50%;
+  padding: 8px;
   cursor: pointer;
   color: #111;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(17, 17, 17, 0.12);
 }
 
 /* ================================
-   MOBILE GLASS DROPDOWN
+   MOBILE RESPONSIVE
 ================================ */
-.glass-navbar {
-  isolation: isolate;
-}
-
 @media (max-width: 900px) {
+  .floating-navbar-wrapper {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .floating-navbar {
+    padding: 10px 16px;
+  }
+
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-links {
     position: absolute;
-    top: 92px;
-    right: 16px;
+    top: 70px;
+    right: 10px;
     width: 220px;
 
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(18px) saturate(180%);
-    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
 
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.1),
-      0 12px 30px rgba(0,0,0,0.3);
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
     padding: 1.5rem;
 
     opacity: 0;
@@ -236,29 +267,48 @@ html, body {
     pointer-events: none;
 
     transition: opacity 0.25s ease, transform 0.25s ease;
-    will-change: backdrop-filter;
     z-index: 999;
   }
 
   .nav-links a {
-    color: #fff;
-  }
-
-  .nav-links .lang-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: #111;
   }
 
   .nav-links .quote-btn {
-    background: rgba(255, 159, 28, 0.9);
-    color: #111;
+    color: #fff;
   }
 
   .nav-links.active {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .logo-wrap {
+    padding: 6px 12px;
+  }
+
+  .logo-wrap img {
+    height: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-navbar-wrapper {
+    padding: 0 5px;
+  }
+
+  .floating-navbar {
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    width: 200px;
+    right: 5px;
   }
 }
 

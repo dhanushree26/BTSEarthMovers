@@ -9,12 +9,12 @@ export const translations = {
             lang: "Language"
         },
         common: {
-            callNow: "Call Now: (555) 123-4567",
+            callNow: "Call Now: (+91) 90420 07695",
             viewAll: "View All Equipment",
             testimonials: "What Our Clients Say",
             contactInfo: "Contact Information",
-            address: "123 Construction Ave, Industry City",
-            phone: "(555) 123-4567",
+            address: "No.1, Nallasiriar Street, Periyar Nagar, Nehru Nagar West, Thottipalayam, Tamil Nadu 641014",
+            phone: "(+91) 90420 07695",
             email: "info@btsearthmovers.com"
         },
         hero: {
@@ -57,12 +57,12 @@ export const translations = {
             lang: "மொழி"
         },
         common: {
-            callNow: "அழைக்க: (555) 123-4567",
+            callNow: "அழைக்க: (+91) 90420 07695",
             viewAll: "அனைத்து உபகரணங்களையும் காண்க",
             testimonials: "வாடிக்கையாளர் கருத்துக்கள்",
             contactInfo: "தொடர்பு விவரங்கள்",
-            address: "123 கன்ஸ்ட்ரக்ஷன் அவென்யூ, இண்டஸ்ட்ரி சிட்டி",
-            phone: "(555) 123-4567",
+            address: "எண்.1, நல்லசிரியார் தெரு, பெரியார் நகர், நேரு நகர் மேற்கு, தோட்டிபாளையம், தமிழ்நாடு 641014",
+            phone: "(+91) 90420 07695",
             email: "info@btsearthmovers.com"
         },
         hero: {

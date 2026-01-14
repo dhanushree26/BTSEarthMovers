@@ -9,7 +9,8 @@ import Booking from './pages/Booking';
 import Admin from './pages/Admin';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, ChevronRight } from 'lucide-react';
+import './App.css';
 
 function App() {
   return (
@@ -29,57 +30,59 @@ function App() {
 
       <CallButton />
 
-      {/* Titan Footer */}
-      <footer style={{ background: '#222', color: '#888', padding: '5rem 0 2rem' }}>
+      {/* Footer */}
+      <footer className="app-footer">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
+          <div className="footer-grid">
             {/* Brand */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                <div style={{ background: '#FF9F1C', color: '#111', fontWeight: 'bold', padding: '5px 10px', borderRadius: '4px' }}>BTS</div>
-                <span style={{ fontSize: '1.2rem', fontWeight: 700, fontFamily: 'Oswald', color: 'white' }}>EARTH MOVERS</span>
+              <div className="footer-brand-logo">
+                <div className="footer-brand-badge">BTS</div>
+                <span className="footer-brand-text">EARTH MOVERS</span>
               </div>
-              <p style={{ marginBottom: '1.5rem', lineHeight: '1.8' }}>Your trusted partner for heavy equipment rentals. Serving construction professionals since 2010.</p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <div style={{ background: '#333', padding: '10px', borderRadius: '50%' }}><Facebook size={18} color="white" /></div>
-                <div style={{ background: '#333', padding: '10px', borderRadius: '50%' }}><Twitter size={18} color="white" /></div>
-                <div style={{ background: '#333', padding: '10px', borderRadius: '50%' }}><Linkedin size={18} color="white" /></div>
-              </div>
+              <p className="footer-description">Your trusted partner for heavy equipment rentals. Serving construction professionals since 2010.</p>
+              {/* <div className="footer-social">
+                <div className="footer-social-icon"><Facebook size={18} color="white" /></div>
+                <div className="footer-social-icon"><Twitter size={18} color="white" /></div>
+                <div className="footer-social-icon"><Linkedin size={18} color="white" /></div>
+              </div> */}
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Quick Links</h4>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li><Link to="/equipment" style={{ color: '#888' }}>Equipment Gallery</Link></li>
-                <li><Link to="/booking" style={{ color: '#888' }}>Book Equipment</Link></li>
-                <li><Link to="/about" style={{ color: '#888' }}>About Us</Link></li>
-                <li><Link to="/contact" style={{ color: '#888' }}>Contact</Link></li>
+              <h4 className="footer-heading">Quick Links</h4>
+              <ul className="footer-links">
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment">Equipment Gallery</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/booking">Book Equipment</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/about">About Us</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 
             {/* Equipment */}
             <div>
-              <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Equipment</h4>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li>Bulldozers</li>
-                <li>Excavators</li>
-                <li>Motor Graders</li>
-                <li>Dump Trucks</li>
+              <h4 className="footer-heading">Equipment</h4>
+              <ul className="footer-links">
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=excavator">Excavators</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=loader">Loaders</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=compactor">Compactors & Rollers</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=skid-steer">Skid Steer</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=dozer">Dozer</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=crane">Crane</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=trailer">Trailers & Tippers</Link></li>
               </ul>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Contact Us</h4>
-              <p style={{ marginBottom: '10px' }}>123 Industrial Boulevard<br />Chennai, TN 600001</p>
-              <p style={{ color: '#FF9F1C', fontWeight: 'bold' }}>(555) 123-4567</p>
-              <p>info@btsearthmovers.com</p>
+              <h4 className="footer-heading">Contact Info</h4>
+              <p className="footer-contact-text">No.1, Nallasiriar Street, Periyar Nagar,<br />Nehru Nagar West, Thottipalayam,<br />Tamil Nadu 641014</p>
+              <p className="footer-phone">(+91) 90420 07695</p>
             </div>
           </div>
 
-          <div style={{ borderTop: '1px solid #333', paddingTop: '2rem', textAlign: 'center', fontSize: '0.9rem' }}>
-            <p>&copy; {new Date().getFullYear()} BTS Earth Movers. All rights reserved.</p>
+          <div className="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} BTS Earth Movers. All rights reserved.<br />Made with <span style={{ color: 'red' }}>❤</span> by <a href="https://aethrastudio.in" target="_blank" rel="noopener noreferrer">AethraStudio</a></p>
           </div>
         </div>
       </footer>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import axios from 'axios';
 import { useLanguage } from '../context/LanguageContext';
 import { equipmentData } from '../data';
 import { CheckCircle, AlertCircle } from 'lucide-react';
@@ -62,13 +61,37 @@ const Booking = () => {
         }
 
         setStatus('submitting');
-        try {
-            await axios.post('/api/bookings', form);
+        
+        // Get equipment name
+        const selectedEquipment = equipmentData.find(item => item.id === form.equipmentId);
+        const equipmentName = selectedEquipment ? selectedEquipment.name : 'Not specified';
+
+        // Format WhatsApp message
+        const message = `*New Quote Request*\n\n` +
+            `*Customer Name:* ${form.customerName}\n` +
+            `*Phone:* ${form.phone}\n` +
+            `*Email:* ${form.email}\n` +
+            `*Equipment:* ${equipmentName}\n` +
+            `*Start Date:* ${form.startDate}\n` +
+            `*End Date:* ${form.endDate}\n` +
+            `*Language:* ${form.language === 'en' ? 'English' : 'Tamil'}`;
+
+        // WhatsApp number (without + or spaces)
+        const whatsappNumber = '919655502923';
+        
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Show success message
+        setTimeout(() => {
             setStatus('success');
-        } catch (err) {
-            console.error(err);
-            setStatus('error');
-        }
+        }, 500);
     };
 
     if (status === 'success') {
@@ -77,7 +100,7 @@ const Booking = () => {
                 <div className="booking-success-message" style={{ background: '#dff0d8', color: '#3c763d', padding: '3rem', borderRadius: '8px', border: '1px solid #d6e9c6', display: 'inline-block', maxWidth: '500px' }}>
                     <CheckCircle size={64} style={{ marginBottom: '1.5rem', color: '#28a745' }} />
                     <h2 style={{ marginBottom: '1rem' }}>{t('booking.success')}</h2>
-                    <p style={{ fontSize: '1.1rem' }}>Your quote request has been received. Our team will verify your details and contact you shortly at <strong>{form.phone}</strong>.</p>
+                    <p style={{ fontSize: '1.1rem' }}>Your quote request has been received. Our team will verify your details and contact you shortly .</p>
                 </div>
             </div>
         );

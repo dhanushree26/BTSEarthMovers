@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from "framer-motion";
 import { equipmentData } from '../data';
-import { Star, Truck, Shield, Clock, Award, ArrowRight } from 'lucide-react';
+import { Truck, Shield, Clock, Award, ArrowRight } from 'lucide-react';
 import heroVideo from '../assets/Sunrise_Construction_Site_Cinematic_Video.mp4';
 import ServicesSection from '../components/ServicesSection';
 import './Home.css';
@@ -11,27 +10,18 @@ import './Home.css';
 const Home = () => {
     const { t, switchLanguage } = useLanguage();
     const [showLangModal, setShowLangModal] = useState(false);
-
-    // Aggressive Autoplay Fix: Use raw HTML to bypass React attribute hydration issues
-    const videoMarkup = {
-        __html: `
-            <video 
-                autoplay 
-                loop 
-                muted 
-                playsinline 
-                preload="auto"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none;"
-            >
-                <source src="${heroVideo}" type="video/mp4" />
-            </video>
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
-        `
-    };
+    const videoRef = useRef(null);
 
     useEffect(() => {
         if (!localStorage.getItem('appLang')) {
             setShowLangModal(true);
+        }
+
+        // Force video to play
+        if (videoRef.current) {
+            videoRef.current.play().catch(err => {
+                console.log('Video autoplay failed:', err);
+            });
         }
     }, []);
 
@@ -56,7 +46,7 @@ const Home = () => {
             )}
 
             {/* Hero - Titan Style with Video Background */}
-            <section style={{
+            <section className="hero-section" style={{
                 position: 'relative',
                 height: '85vh',
                 display: 'flex',
@@ -65,13 +55,15 @@ const Home = () => {
                 overflow: 'hidden',
                 background: '#333' // Fallback background
             }}>
-                {/* Video Background - Fixed */}
+                {/* Video Background */}
                 <video 
+                    ref={videoRef}
                     autoPlay 
                     loop 
                     muted 
                     playsInline 
                     preload="auto"
+                    className="hero-video"
                     style={{ 
                         position: 'absolute', 
                         top: 0, 
@@ -79,15 +71,16 @@ const Home = () => {
                         width: '100%', 
                         height: '100%', 
                         objectFit: 'cover', 
-                        zIndex: -2 
+                        zIndex: 0 
                     }}
                 >
                     <source src={heroVideo} type="video/mp4" />
                 </video>
                 
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', zIndex: -1 }}></div>
+                {/* Dark overlay */}
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', zIndex: 1 }}></div>
 
-                <div className="container hero-container" style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+                <div className="container hero-container" style={{ width: '100%', position: 'relative', zIndex: 2 }}>
                     <div className="hero-badge" style={{ background: '#333', color: '#FF9F1C', display: 'inline-block', padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                         Trusted by 500+ Contractors
                     </div>
@@ -443,13 +436,13 @@ const Home = () => {
 
 
             {/* CTA Section */}
-            <section style={{ background: '#FF9F1C', padding: '4rem 0', textAlign: 'center' }}>
+            <section className="cta-section" style={{ background: '#FF9F1C', padding: '4rem 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#111' }}>READY TO START YOUR PROJECT?</h2>
-                    <p style={{ maxWidth: '700px', margin: '0 auto 2rem', color: '#333', fontSize: '1.1rem' }}>Get a free quote today and see why hundreds of contractors trust us.</p>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-                        <Link to="/booking" className="btn" style={{ background: '#111', color: '#FF9F1C' }}>Request a Quote</Link>
-                        <Link to="/contact" className="btn" style={{ background: 'transparent', border: '2px solid #111', color: '#111' }}>Contact Us</Link>
+                    <h2 className="cta-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#111' }}>READY TO START YOUR PROJECT?</h2>
+                    <p className="cta-description" style={{ maxWidth: '700px', margin: '0 auto 2rem', color: '#333', fontSize: '1.1rem' }}>Get a free quote today and see why hundreds of contractors trust us.</p>
+                    <div className="cta-buttons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+                        <Link to="/booking" className="btn cta-btn-primary" style={{ background: '#111', color: '#FF9F1C' }}>Request a Quote</Link>
+                        <Link to="/contact" className="btn cta-btn-secondary" style={{ background: 'transparent', border: '2px solid #111', color: '#111' }}>Contact Us</Link>
                     </div>
                 </div>
             </section>

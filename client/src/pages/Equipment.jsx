@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { equipmentData } from '../data';
 import { Filter, X } from 'lucide-react';
@@ -7,8 +7,17 @@ import './Equipment.css';
 
 const Equipment = () => {
     const { t } = useLanguage();
+    const [searchParams] = useSearchParams();
     const [filter, setFilter] = useState('all');
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+    // Set filter from URL parameter on mount
+    useEffect(() => {
+        const urlFilter = searchParams.get('filter');
+        if (urlFilter) {
+            setFilter(urlFilter);
+        }
+    }, [searchParams]);
 
     const filteredData = filter === 'all'
         ? equipmentData

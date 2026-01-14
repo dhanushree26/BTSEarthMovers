@@ -1,10 +1,9 @@
-import React from 'react';
 import { Phone } from 'lucide-react';
 
 const CallButton = () => {
     return (
         <a
-            href="tel:5551234567"
+            href="tel:+919042007695"
             style={{
                 position: 'fixed',
                 bottom: '30px',
