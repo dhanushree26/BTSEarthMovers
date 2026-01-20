@@ -61,8 +61,42 @@ const Equipment = () => {
         <div style={{ padding: '2rem 0', minHeight: '80vh', background: '#f9f9f9' }}>
             <div className="container">
                 <div className="text-center" style={{ marginBottom: '2rem' }}>
-                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{t('equipment.title')}</h1>
-                    <p style={{ color: '#666' }}>{t('equipment.subtitle')}</p>
+                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Heavy Construction Equipment Rental Services</h1>
+                    <p style={{ color: '#666', maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        Modern fleet of excavators, JCBs, compactors, and earthmoving machinery available for infrastructure projects across Tamil Nadu. Professional equipment rental services with 24/7 support and nationwide project capability.
+                    </p>
+                    
+                    {/* Catalog Download Button */}
+                    <div style={{ marginTop: '1.5rem' }}>
+                        <a 
+                            href="/Catlog.pdf" 
+                            download="BTS-Earth-Movers-Equipment-Catalog.pdf"
+                            className="btn"
+                            style={{ 
+                                display: 'inline-flex', 
+                                alignItems: 'center', 
+                                gap: '8px',
+                                backgroundColor: '#FF9F1C',
+                                color: '#111',
+                                padding: '12px 24px',
+                                borderRadius: '6px',
+                                textDecoration: 'none',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseOver={(e) => {
+                                e.target.style.backgroundColor = '#E08C1F';
+                                e.target.style.transform = 'translateY(-2px)';
+                            }}
+                            onMouseOut={(e) => {
+                                e.target.style.backgroundColor = '#FF9F1C';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            📄 Download Equipment Catalog
+                        </a>
+                    </div>
                 </div>
 
                 {/* Desktop Filter Bar */}
@@ -262,7 +296,7 @@ const Equipment = () => {
                             flexDirection: 'column'
                         }}>
                             <div style={{ position: 'relative' }}>
-                                <img src={item.image} alt={item.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                                <img src={item.image} alt={item.alt || item.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
                                 <span style={{
                                     position: 'absolute',
                                     bottom: '10px',

@@ -3,6 +3,7 @@ export const translations = {
         nav: {
             home: "Home",
             equipment: "Equipment",
+            projects: "Projects",
             about: "About Us",
             contact: "Contact",
             book: "Get Quote",
@@ -15,24 +16,25 @@ export const translations = {
             contactInfo: "Contact Information",
             address: "No.1, Nallasiriar Street, Periyar Nagar, Nehru Nagar West, Thottipalayam, Tamil Nadu 641014",
             phone: "(+91) 90420 07695",
-            email: "info@btsearthmovers.com"
+            email: "info@btsearthmovers.com",
+            downloadCatalog: "Download Catalog"
         },
         hero: {
-            title: "Build Stronger. Dig Deeper.",
-            subtitle: "Premium heavy equipment rentals for construction projects of any scale.",
+            title: "Leading Earthmoving Contractors in Tamil Nadu - Build Stronger. Dig Deeper.",
+            subtitle: "Professional earthmoving contractors based in Tamil Nadu with modern heavy equipment fleet. Excavation, site development, and infrastructure services across India with 24/7 support.",
             cta1: "View Equipment",
             cta2: "Contact Us"
         },
         equipment: {
-            title: "Our Equipment Fleet",
-            subtitle: "Browse our extensive inventory.",
+            title: "Heavy Construction Equipment Rental Services - Modern Fleet Available",
+            subtitle: "Browse our comprehensive inventory of excavators, JCB loaders, and earthmoving equipment for projects across Tamil Nadu and India.",
             filterAll: "All",
             getQuote: "Get a Quote",
             dailyRate: "Daily Rate"
         },
         booking: {
-            title: "Request a Quote",
-            subtitle: "Fill out the form below.",
+            title: "Request Equipment Rental Quote - Professional Earthmoving Services",
+            subtitle: "Get instant quotes for heavy equipment rental and earthmoving services across Tamil Nadu with pan-India project capability.",
             name: "Full Name",
             phone: "Phone Number",
             email: "Email Address",
@@ -51,6 +53,7 @@ export const translations = {
         nav: {
             home: "முகப்பு",
             equipment: "உபகரணங்கள்",
+            projects: "திட்டங்கள்",
             about: "எங்களைப் பற்றி",
             contact: "தொடர்பு",
             book: "விலை பெற",
@@ -63,24 +66,25 @@ export const translations = {
             contactInfo: "தொடர்பு விவரங்கள்",
             address: "எண்.1, நல்லசிரியார் தெரு, பெரியார் நகர், நேரு நகர் மேற்கு, தோட்டிபாளையம், தமிழ்நாடு 641014",
             phone: "(+91) 90420 07695",
-            email: "info@btsearthmovers.com"
+            email: "info@btsearthmovers.com",
+            downloadCatalog: "பட்டியல் பதிவிறக்கம்"
         },
         hero: {
-            title: "வலிமையாக கட்டுங்கள். ஆழமாக தோண்டுங்கள்.",
-            subtitle: "எந்த அளவிலான கட்டுமான திட்டங்களுக்கும் சிறந்த கனரக உபகரணங்கள் வாடகைக்கு.",
+            title: "தமிழ்நாட்டின் முன்னணி மண் நகர்த்தும் ஒப்பந்தக்காரர்கள் - வலிமையாக கட்டுங்கள். ஆழமாக தோண்டுங்கள்.",
+            subtitle: "தமிழ்நாட்டை தளமாகக் கொண்ட தொழில்முறை மண் நகர்த்தும் ஒப்பந்தக்காரர்கள். நவீன கனரக உபகரணங்களுடன் இந்தியா முழுவதும் அகழ்வாராய்ச்சி, தள மேம்பாடு மற்றும் உள்கட்டமைப்பு சேவைகள்.",
             cta1: "உபகரணங்களைப் பார்க்க",
             cta2: "எங்களைத் தொடர்பு கொள்ள"
         },
         equipment: {
-            title: "எங்கள் உபகரணங்கள்",
-            subtitle: "எங்கள் விரிவான தொகுப்பை உலாவுக.",
+            title: "கனரக கட்டுமான உபகரண வாடகை சேவைகள் - நவீன கடற்படை கிடைக்கும்",
+            subtitle: "தமிழ்நாடு மற்றும் இந்தியா முழுவதும் திட்டங்களுக்கான எக்ஸ்கேவேட்டர்கள், JCB லோடர்கள் மற்றும் மண் நகர்த்தும் உபகரணங்களின் விரிவான பட்டியலை உலாவுங்கள்.",
             filterAll: "அனைத்தும்",
             getQuote: "விலை கேட்க",
             dailyRate: "தினசரி வாடகை"
         },
         booking: {
-            title: "விலை விவரம் கேட்க",
-            subtitle: "கீழே உள்ள படிவத்தை நிரப்பவும்.",
+            title: "உபகரண வாடகை விலை விவரம் கேட்க - தொழில்முறை மண் நகர்த்தும் சேவைகள்",
+            subtitle: "தமிழ்நாடு முழுவதும் கனரக உபகரண வாடகை மற்றும் மண் நகர்த்தும் சேவைகளுக்கு உடனடி விலை பெறுங்கள்.",
             name: "முழு பெயர்",
             phone: "தொலைபேசி எண்",
             email: "மின்னஞ்சல் முகவரி",

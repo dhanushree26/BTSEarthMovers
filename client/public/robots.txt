@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://btsearthmovers.com/sitemap.xml
+
+# Disallow admin pages
+Disallow: /admin
+
+# Allow all equipment and service pages
+Allow: /equipment
+Allow: /projects
+Allow: /about
+Allow: /contact
+Allow: /booking

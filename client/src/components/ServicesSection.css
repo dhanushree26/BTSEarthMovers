@@ -149,8 +149,8 @@
   overflow: hidden;
   padding: 0 2rem;
   
-  /* Ensure wheel events are captured */
-  touch-action: pan-y;
+  /* Allow both vertical and horizontal touch actions */
+  touch-action: pan-y pan-x;
 }
 
 /* Mobile Grid Override - Re-enable text selection */
@@ -180,6 +180,9 @@
   /* Enable smooth scrolling and drag */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  
+  /* Allow vertical scrolling while enabling horizontal drag */
+  touch-action: pan-y pan-x;
   
   /* Premium drag cursor */
   cursor: grab;
@@ -237,7 +240,7 @@
   border-radius: 20px;
   padding: 2.5rem 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -246,10 +249,11 @@
   opacity: 0;
   transform: translateY(30px);
   
-  /* Fixed dimensions for consistent scroll with snap */
+  /* Fixed width for consistent scroll with snap, auto height for content */
   min-width: 280px;
   width: 280px;
-  height: 280px;
+  min-height: 280px;
+  height: auto;
   flex-shrink: 0;
   scroll-snap-align: start;
   
@@ -322,6 +326,8 @@
   margin: 0;
   font-weight: 400;
   flex: 1;
+  overflow: visible;
+  word-wrap: break-word;
   
   /* Premium text rendering */
   text-rendering: optimizeLegibility;
@@ -345,7 +351,8 @@
   .service-card {
     min-width: 300px;
     width: 300px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
   }
 }
 
@@ -363,7 +370,8 @@
   .service-card {
     min-width: 280px;
     width: 280px;
-    height: 280px;
+    min-height: 280px;
+    height: auto;
   }
 }
 
@@ -390,7 +398,8 @@
   .service-card {
     min-width: 260px;
     width: 260px;
-    height: 260px;
+    min-height: 260px;
+    height: auto;
     padding: 2rem 1.5rem;
   }
   
@@ -434,6 +443,8 @@
   /* Switch to Grid Layout on Mobile */
   .services-scroll-container {
     padding: 0 1rem;
+    /* Ensure vertical scrolling works on mobile */
+    touch-action: pan-y;
   }
   
   .services-grid {
@@ -442,6 +453,8 @@
     gap: 1.5rem;
     overflow: visible;
     padding-bottom: 0;
+    /* Enable vertical scrolling on mobile */
+    touch-action: pan-y;
   }
   
   .service-card {

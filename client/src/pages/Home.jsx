@@ -48,12 +48,15 @@ const Home = () => {
             {/* Hero - Titan Style with Video Background */}
             <section className="hero-section" style={{
                 position: 'relative',
-                height: '85vh',
+                height: '100vh',
+                minHeight: '100vh',
                 display: 'flex',
                 alignItems: 'center',
                 color: 'white',
                 overflow: 'hidden',
-                background: '#333' // Fallback background
+                background: '#333', // Fallback background
+                marginTop: '-100px', // Offset body padding
+                paddingTop: '100px' // Maintain content spacing
             }}>
                 {/* Video Background */}
                 <video 
@@ -85,10 +88,10 @@ const Home = () => {
                         Trusted by 500+ Contractors
                     </div>
                     <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1', marginBottom: '1.5rem', color: 'white', maxWidth: '800px' }}>
-                        HEAVY EQUIPMENT <span className="hero-highlight" style={{ color: '#FF9F1C' }}>RENTALS</span>
+                        LEADING EARTHMOVING CONTRACTORS IN <span className="hero-highlight" style={{ color: '#FF9F1C' }}>COIMBATORE</span>
                     </h1>
                     <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '600px', color: '#ddd' }}>
-                        {t('hero.subtitle')}
+                        BTS Earth Movers is a trusted earthmoving contractor based in Tamil Nadu with strong operational presence in Coimbatore. We specialize in excavation, site development, and road construction services. With over 15 years of experience and modern heavy machinery fleet, we execute infrastructure projects across Tamil Nadu and have the capability to serve construction needs anywhere in India.
                     </p>
                     <div className="hero-buttons" style={{ display: 'flex', gap: '1rem' }}>
                         <Link to="/equipment" className="btn hero-btn-primary" style={{ padding: '16px 32px', fontSize: '1.1rem' }}>
@@ -103,16 +106,17 @@ const Home = () => {
             <section className="about-section">
   <div className="container">
     <div className="about-header">
-      <span className="about-tag">ABOUT US</span>
+      <span className="about-tag">ABOUT BTS EARTH MOVERS</span>
 
       <h2 className="about-title">
-        BUILDING <span>TRUST</span> THROUGH STRENGTH
+        TAMIL NADU'S TRUSTED <span>EARTHMOVING</span> SPECIALISTS
       </h2>
 
       <p className="about-desc">
-        For over two decades, we've been the backbone of major construction
-        and infrastructure projects, providing reliable heavy machinery
-        and earthmoving solutions.
+        BTS Earth Movers is a leading earthmoving and construction contractor based in Tamil Nadu, serving the region for over 15 years. 
+        We specialize in excavation, site development, road construction, and heavy machinery rental services across Tamil Nadu. 
+        Our fleet of 60+ modern excavators, bulldozers, and compactors ensures efficient project completion for residential, 
+        commercial, and infrastructure developments throughout the state and across India.
       </p>
     </div>
 
@@ -120,23 +124,23 @@ const Home = () => {
       {[
         {
           icon: Shield,
-          title: "Safety First",
-          text: "All equipment meets international safety standards with regular maintenance checks."
+          title: "Licensed Earthmoving Contractors",
+          text: "Fully licensed earthmoving contractors with all necessary permits for construction projects across Tamil Nadu and India."
         },
         {
           icon: Clock,
-          title: "On-Time Delivery",
-          text: "We understand deadlines. Our machinery arrives when you need it, every time."
+          title: "24/7 Equipment Availability",
+          text: "Round-the-clock machinery rental services with emergency equipment deployment across Tamil Nadu."
         },
         {
           icon: Award,
-          title: "Industry Experience",
-          text: "25+ years serving construction, mining, and infrastructure sectors."
+          title: "15+ Years Industry Experience",
+          text: "Extensive experience in diverse terrain and soil conditions for optimal earthmoving solutions across India."
         },
         {
           icon: Truck,
-          title: "Skilled Operators",
-          text: "Certified operators ensuring efficiency and safety on every job."
+          title: "60+ Heavy Machinery Fleet",
+          text: "Comprehensive fleet of excavators, JCBs, and compactors for all construction and infrastructure requirements."
         }
       ].map((item, i) => (
         <div className="about-card" key={i}>
@@ -438,8 +442,8 @@ const Home = () => {
             {/* CTA Section */}
             <section className="cta-section" style={{ background: '#FF9F1C', padding: '4rem 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 className="cta-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#111' }}>READY TO START YOUR PROJECT?</h2>
-                    <p className="cta-description" style={{ maxWidth: '700px', margin: '0 auto 2rem', color: '#333', fontSize: '1.1rem' }}>Get a free quote today and see why hundreds of contractors trust us.</p>
+                    <h2 className="cta-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#111' }}>NEED EARTHMOVING CONTRACTORS IN COIMBATORE?</h2>
+                    <p className="cta-description" style={{ maxWidth: '700px', margin: '0 auto 2rem', color: '#333', fontSize: '1.1rem' }}>Get a free quote for excavation, site development, and heavy machinery rental services in Coimbatore and Tamil Nadu.</p>
                     <div className="cta-buttons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
                         <Link to="/booking" className="btn cta-btn-primary" style={{ background: '#111', color: '#FF9F1C' }}>Request a Quote</Link>
                         <Link to="/contact" className="btn cta-btn-secondary" style={{ background: 'transparent', border: '2px solid #111', color: '#111' }}>Contact Us</Link>

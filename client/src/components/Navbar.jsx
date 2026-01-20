@@ -46,6 +46,9 @@ const Navbar = () => {
           <Link to="/equipment" onClick={() => setIsMenuOpen(false)}>
             {t('nav.equipment')}
           </Link>
+          <Link to="/projects" onClick={() => setIsMenuOpen(false)}>
+            {t('nav.projects')}
+          </Link>
           <Link to="/about" onClick={() => setIsMenuOpen(false)}>
             {t('nav.about')}
           </Link>

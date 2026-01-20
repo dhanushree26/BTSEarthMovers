@@ -13,62 +13,62 @@ const ServicesSection = () => {
     {
       id: 1,
       icon: "🚛",
-      title: "Large Scale Earthmoving",
-      description: "Comprehensive excavation and earth movement for major construction projects with precision and efficiency."
+      title: "Large Scale Earthmoving Services",
+      description: "Professional excavation and earth movement services for major construction and infrastructure projects across Tamil Nadu. Our modern fleet handles residential, commercial, and industrial developments with precision and efficiency."
     },
     {
       id: 2,
       icon: "📍",
-      title: "Site Preparation Works",
-      description: "Complete site clearing, grading, and preparation for development ensuring optimal foundation conditions."
+      title: "Site Preparation & Development",
+      description: "Complete site clearing, grading, and preparation services ensuring optimal foundation conditions for construction projects. We specialize in land development and terrain modification across diverse soil conditions."
     },
     {
       id: 3,
       icon: "🔨",
-      title: "Aggregate Crushing & Screening",
-      description: "High-quality aggregate production and material processing services for construction requirements."
+      title: "Road Construction & Infrastructure",
+      description: "Comprehensive road construction services including excavation, grading, and base preparation for highways, residential roads, and commercial access routes throughout Tamil Nadu and neighboring states."
     },
     {
       id: 4,
       icon: "🌱",
-      title: "Soil Remediation Works",
-      description: "Environmental soil treatment and contamination remediation solutions for sustainable development."
+      title: "Environmental Earthworks",
+      description: "Sustainable earthmoving solutions including soil remediation, environmental restoration, and eco-friendly construction practices for responsible development projects across India."
     },
     {
       id: 5,
       icon: "⛰️",
-      title: "Rock Excavation",
-      description: "Specialized rock breaking and removal for challenging terrain and geological conditions."
+      title: "Rock Excavation & Blasting",
+      description: "Specialized rock breaking, removal, and controlled blasting services for challenging terrain and geological conditions. Expert handling of hard rock excavation for infrastructure projects."
     },
     {
       id: 6,
       icon: "⛏️",
-      title: "Mining & Quarrying",
-      description: "Professional mining operations and quarry development services with safety compliance."
+      title: "Mining & Quarrying Support",
+      description: "Professional mining operations support and quarry development services with full safety compliance. Experienced in mineral extraction and aggregate production operations."
     },
     {
       id: 7,
       icon: "🏗️",
-      title: "Demolition",
-      description: "Safe and efficient structural demolition and debris removal with environmental considerations."
+      title: "Demolition & Site Clearance",
+      description: "Safe and efficient structural demolition and debris removal services with environmental considerations. Complete site clearance for redevelopment projects across Tamil Nadu."
     },
     {
       id: 8,
       icon: "🛡️",
-      title: "Coastal Protection & Rock Revetment",
-      description: "Marine engineering and coastal erosion protection solutions for waterfront infrastructure."
+      title: "Coastal & Marine Earthworks",
+      description: "Specialized marine engineering and coastal protection solutions for waterfront infrastructure projects. Expert handling of coastal erosion control and marine construction support."
     },
     {
       id: 9,
       icon: "🛣️",
-      title: "Road Work",
-      description: "Complete road construction, maintenance, and infrastructure development for transportation networks."
+      title: "Highway & Transportation Infrastructure",
+      description: "Complete highway construction, maintenance, and transportation infrastructure development. Experienced in major road projects and traffic management during construction phases."
     },
     {
       id: 10,
       icon: "🔧",
-      title: "Equipment Rental & General",
-      description: "Professional equipment rental and general contracting services for diverse project requirements."
+      title: "Heavy Equipment Rental Services",
+      description: "Professional excavator, JCB, and heavy machinery rental services for diverse construction projects. Modern fleet available for short-term and long-term project requirements across India."
     }
   ];
 
@@ -167,31 +167,46 @@ const ServicesSection = () => {
 
     // Touch events for mobile
     const handleTouchStart = (e) => {
-      setIsDragging(true);
-      setIsUserInteracting(true);
-      
       const touch = e.touches[0];
+      const startX = touch.pageX;
+      const startY = touch.pageY;
+      
       setDragStart({
-        x: touch.pageX - scrollContainer.offsetLeft,
-        scrollLeft: scrollContainer.scrollLeft
+        x: startX - scrollContainer.offsetLeft,
+        y: startY,
+        scrollLeft: scrollContainer.scrollLeft,
+        startX,
+        startY
       });
       
       scrollContainer.style.scrollBehavior = 'auto';
     };
 
     const handleTouchMove = (e) => {
-      if (!isDragging) return;
-      
-      e.preventDefault();
+      if (!dragStart.startX) return;
       
       const touch = e.touches[0];
-      const x = touch.pageX - scrollContainer.offsetLeft;
-      const walk = (x - dragStart.x) * 1.2;
+      const currentX = touch.pageX;
+      const currentY = touch.pageY;
       
-      if (animationId) cancelAnimationFrame(animationId);
-      animationId = requestAnimationFrame(() => {
-        scrollContainer.scrollLeft = dragStart.scrollLeft - walk;
-      });
+      const deltaX = Math.abs(currentX - dragStart.startX);
+      const deltaY = Math.abs(currentY - dragStart.startY);
+      
+      // Only prevent default and handle horizontal drag if horizontal movement is greater
+      if (deltaX > deltaY && deltaX > 10) {
+        e.preventDefault();
+        setIsDragging(true);
+        setIsUserInteracting(true);
+        
+        const x = currentX - scrollContainer.offsetLeft;
+        const walk = (x - dragStart.x) * 1.2;
+        
+        if (animationId) cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(() => {
+          scrollContainer.scrollLeft = dragStart.scrollLeft - walk;
+        });
+      }
+      // Allow vertical scrolling for vertical movements
     };
 
     const handleTouchEnd = () => {
@@ -203,6 +218,9 @@ const ServicesSection = () => {
         cancelAnimationFrame(animationId);
         animationId = null;
       }
+      
+      // Reset drag start
+      setDragStart({ x: 0, scrollLeft: 0 });
     };
 
     // Mouse events
@@ -212,9 +230,9 @@ const ServicesSection = () => {
     scrollContainer.addEventListener('mouseleave', handleMouseLeave);
 
     // Touch events
-    scrollContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+    scrollContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
     scrollContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
-    scrollContainer.addEventListener('touchend', handleTouchEnd);
+    scrollContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     // Prevent context menu on right click while dragging
     const handleContextMenu = (e) => {
@@ -280,12 +298,12 @@ const ServicesSection = () => {
       
       <div className="container">
         <div className="services-header">
-          <span className="services-subtitle">OUR SERVICES</span>
+          <span className="services-subtitle">EARTHMOVING SERVICES COIMBATORE</span>
           <h2 className="services-title">
-            Complete Earthmoving & Site Development Solutions
+            Complete Earthmoving & Construction Solutions in Tamil Nadu
           </h2>
           <p className="services-description">
-            Professional infrastructure services delivered with precision, safety, and excellence across all project scales.
+            Professional earthmoving, excavation, and heavy machinery services delivered across Coimbatore, Tirupur, Erode, and Tamil Nadu with precision, safety, and excellence for all construction project scales.
           </p>
         </div>
 

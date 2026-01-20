@@ -13,10 +13,10 @@ const Contact = () => {
     return (
         <div>
             {/* Header */}
-            {/* <div className="contact-header" style={{ background: '#111', padding: '4rem 0', textAlign: 'center', color: 'white' }}>
-                <h1>{t('nav.contact')}</h1>
-                <p style={{ color: '#ccc' }}>Get in touch with our team</p>
-            </div> */}
+            <div className="contact-header" style={{ background: '#ffffffff', padding: '4rem 0', textAlign: 'center', color: 'black' }}>
+                <h1>Contact Earthmoving Contractors in Coimbatore</h1>
+                <p style={{ color: '#363636ff' }}>Get in touch with BTS Earth Movers for excavation, site development, and heavy machinery rental services. Based in Coimbatore with service coverage across Tamil Nadu and pan-India project capability.</p>
+            </div>
 
             <div className="section-padding container">
                 <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>

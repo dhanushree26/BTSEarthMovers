@@ -18,10 +18,9 @@ const About = () => {
           padding: '0 1rem', // LEFT & RIGHT SPACING
         }}
       >
-        {/* TITLE */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h1 style={{ fontWeight: 600, letterSpacing: '0.5px' }}>
-            {t('nav.about')}
+            About BTS Earth Movers - Leading Earthmoving Contractors in Tamil Nadu
           </h1>
         </div>
 
@@ -36,26 +35,31 @@ const About = () => {
           }}
         >
           <p style={{ marginBottom: '1.5rem' }}>
-            <strong style={{ color: '#111' }}>BTS Earth Movers</strong> has been a
-            trusted name in the construction equipment rental industry for over a
-            decade. Founded with a mission to provide high-quality heavy machinery
-            to contractors and developers across the region, we have grown into a
-            premier provider of earthmoving solutions.
+            <strong style={{ color: '#111' }}>BTS Earth Movers</strong> is Tamil Nadu's
+            trusted earthmoving contractor with headquarters in Coimbatore. For over 15 years, 
+            we have provided high-quality heavy machinery and excavation services to contractors 
+            and developers across Tamil Nadu. We have grown into the region's premier provider 
+            of earthmoving solutions with capability to execute projects anywhere in India.
           </p>
 
           <p style={{ marginBottom: '1.5rem' }}>
-            Our fleet consists of the latest models from top manufacturers like
-            CAT, Komatsu, and JCB. We take pride in our rigorous maintenance
-            schedule, ensuring that every machine you rent performs at its peak,
-            minimizing downtime on your project.
+            Our extensive fleet consists of modern excavators, JCB loaders, soil compactors, 
+            and earthmoving equipment from top manufacturers like CAT, Komatsu, and JCB. 
+            With rigorous maintenance schedules and experienced operators, we ensure that every 
+            machine performs at peak efficiency, minimizing project downtime and maximizing productivity.
+          </p>
+
+          <p style={{ marginBottom: '1.5rem' }}>
+            Whether you are developing commercial complexes, constructing highways, or executing 
+            residential projects, our team of experts assists you in selecting the right 
+            earthmoving equipment and services. We believe in building strong foundations—both 
+            for your construction projects and our long-term client relationships throughout India.
           </p>
 
           <p>
-            Whether you are building a skyscraper, paving a highway, or
-            landscaping a residential complex, our team of experts is here to
-            assist you in selecting the right equipment for the job. We believe in
-            building strong foundations—both for your projects and our client
-            relationships.
+            From mini excavators for urban construction to heavy-duty bulldozers for large-scale 
+            infrastructure projects, BTS Earth Movers is your reliable partner for comprehensive 
+            earthmoving and excavation services across Tamil Nadu and beyond.
           </p>
 
           {/* STATS */}
@@ -73,12 +77,12 @@ const About = () => {
                 style={{
                   fontSize: '2.4rem',
                   fontWeight: 600,
-                  color: '#FFD700',
+                  color: '#FF9F1C',
                 }}
               >
-                10+
+                15+
               </div>
-              <p style={{ color: '#666' }}>Years Experience</p>
+              <p style={{ color: '#666' }}>Years Serving Coimbatore</p>
             </div>
 
             <div>
@@ -86,12 +90,12 @@ const About = () => {
                 style={{
                   fontSize: '2.4rem',
                   fontWeight: 600,
-                  color: '#FFD700',
+                  color: '#FF9F1C',
                 }}
               >
-                50+
+                60+
               </div>
-              <p style={{ color: '#666' }}>Heavy Machines</p>
+              <p style={{ color: '#666' }}>Heavy Machines Fleet</p>
             </div>
 
             <div>
@@ -99,12 +103,25 @@ const About = () => {
                 style={{
                   fontSize: '2.4rem',
                   fontWeight: 600,
-                  color: '#FFD700',
+                  color: '#FF9F1C',
                 }}
               >
-                500+
+                1000+
               </div>
-              <p style={{ color: '#666' }}>Happy Clients</p>
+              <p style={{ color: '#666' }}>Projects Completed</p>
+            </div>
+
+            <div>
+              <div
+                style={{
+                  fontSize: '2.4rem',
+                  fontWeight: 600,
+                  color: '#FF9F1C',
+                }}
+              >
+                24/7
+              </div>
+              <p style={{ color: '#666' }}>Support Available</p>
             </div>
           </div>
         </div>

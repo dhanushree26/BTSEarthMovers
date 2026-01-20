@@ -9,6 +9,8 @@ import Booking from './pages/Booking';
 import Admin from './pages/Admin';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import { Facebook, Twitter, Linkedin, ChevronRight } from 'lucide-react';
 import './App.css';
 
@@ -24,6 +26,8 @@ function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
@@ -40,7 +44,7 @@ function App() {
                 <div className="footer-brand-badge">BTS</div>
                 <span className="footer-brand-text">EARTH MOVERS</span>
               </div>
-              <p className="footer-description">Your trusted partner for heavy equipment rentals. Serving construction professionals since 2010.</p>
+              <p className="footer-description">Leading earthmoving contractors in Tamil Nadu with headquarters in Coimbatore. Professional excavation, site development, and heavy equipment rental services across India since 2010.</p>
               {/* <div className="footer-social">
                 <div className="footer-social-icon"><Facebook size={18} color="white" /></div>
                 <div className="footer-social-icon"><Twitter size={18} color="white" /></div>
@@ -61,15 +65,15 @@ function App() {
 
             {/* Equipment */}
             <div>
-              <h4 className="footer-heading">Equipment</h4>
+              <h4 className="footer-heading">Equipment Rental</h4>
               <ul className="footer-links">
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=excavator">Excavators</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=loader">Loaders</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=compactor">Compactors & Rollers</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=skid-steer">Skid Steer</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=dozer">Dozer</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=crane">Crane</Link></li>
-                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=trailer">Trailers & Tippers</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=excavator">Excavator Rental </Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=loader">JCB Loader Hire Tamil Nadu</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=compactor">Soil Compactor Rental</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=skid-steer">Skid Steer Rental</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=dozer">Bulldozer Hire Tamilnadu</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><Link to="/equipment?filter=crane">Crane Rental Tamil Nadu</Link></li>
+                <li><ChevronRight size={16} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'middle' }} /><a href="/Catlog.pdf" download="BTS-Earth-Movers-Catalog.pdf" style={{ color: '#FF9F1C', textDecoration: 'none', fontWeight: 'bold' }}>📄 Download Equipment Catalog</a></li>
               </ul>
             </div>
 

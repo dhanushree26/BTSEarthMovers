@@ -109,8 +109,8 @@ const Booking = () => {
     return (
         <div className="section-padding container">
             <div className="booking-header text-center" style={{ marginBottom: '3rem' }}>
-                <h1 className="booking-title" style={{ fontSize: '3rem', color: '#111' }}>{t('booking.title')}</h1>
-                <p className="booking-subtitle" style={{ color: '#666' }}>{t('booking.subtitle')}</p>
+                <h1 className="booking-title" style={{ fontSize: '3rem', color: '#111' }}>Request Quote for Earthmoving Services</h1>
+                <p className="booking-subtitle" style={{ color: '#666' }}>Get a free quote for excavation, site development, and heavy machinery rental services. Based in Coimbatore, serving Tamil Nadu with capability for projects across India.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="booking-form" style={{ maxWidth: '700px', margin: '0 auto', background: 'white', padding: '3rem', borderRadius: '8px', boxShadow: '0 5px 25px rgba(0,0,0,0.05)', borderTop: '4px solid #FF9F1C' }}>

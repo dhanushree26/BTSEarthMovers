@@ -1,0 +1,433 @@
+/* Project Detail Page Styles */
+.project-detail-page {
+  min-height: 100vh;
+}
+
+/* Header */
+.project-detail-header {
+  background: #111;
+  padding: 3rem 0 4rem;
+  color: white;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-orange);
+}
+
+.project-title-section {
+  max-width: 800px;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-category {
+  background: rgba(255, 159, 28, 0.2);
+  color: var(--primary-orange);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-status {
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-status.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.project-status.ongoing {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.project-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.project-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.location-icon {
+  font-size: 1rem;
+}
+
+/* Content Layout */
+.project-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.project-main-content {
+  min-width: 0; /* Prevent overflow */
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.project-description,
+.project-scope,
+.project-machinery,
+.project-challenges {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+/* Image Placeholder */
+.image-placeholder {
+  background: #f8f9fa;
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.placeholder-content {
+  color: #888;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.placeholder-content p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Sidebar */
+.project-sidebar {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.project-info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.info-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-orange);
+  padding-bottom: 0.5rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #333;
+  text-align: right;
+}
+
+/* Related Projects */
+.related-projects {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.related-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-orange);
+  padding-bottom: 0.5rem;
+}
+
+.related-project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.related-project-link:last-child {
+  margin-bottom: 0;
+}
+
+.related-project-card {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.related-project-card:hover {
+  border-color: var(--primary-orange);
+  box-shadow: 0 4px 12px rgba(255, 159, 28, 0.1);
+}
+
+.related-project-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.related-project-location {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.related-project-status {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.related-project-status.completed {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.related-project-status.ongoing {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+/* Project Not Found */
+.project-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.project-not-found h1 {
+  font-size: 2.5rem;
+  color: var(--dark-bg);
+  margin-bottom: 1rem;
+}
+
+.project-not-found p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .project-detail-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .project-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .project-detail-header {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .project-detail-header {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .project-location {
+    font-size: 1rem;
+  }
+
+  .project-detail-content {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .project-sidebar {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-info-card,
+  .related-projects {
+    padding: 1.5rem;
+  }
+
+  .content-section {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description,
+  .project-scope,
+  .project-machinery,
+  .project-challenges {
+    font-size: 1rem;
+  }
+
+  .image-placeholder {
+    padding: 2rem 1rem;
+  }
+
+  .placeholder-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .project-detail-header {
+    padding: 1.5rem 0.5rem 2rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .project-detail-content {
+    padding: 0 0.5rem;
+  }
+
+  .project-info-card,
+  .related-projects {
+    padding: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description,
+  .project-scope,
+  .project-machinery,
+  .project-challenges {
+    font-size: 0.95rem;
+  }
+}
