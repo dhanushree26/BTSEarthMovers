@@ -85,7 +85,7 @@ const Home = () => {
 
                 <div className="container hero-container" style={{ width: '100%', position: 'relative', zIndex: 2 }}>
                     <div className="hero-badge" style={{ background: '#333', color: '#FF9F1C', display: 'inline-block', padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                        Trusted by 500+ Contractors
+                        BTS Earth Movers - Trusted by 500+ Contractors
                     </div>
                     <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1', marginBottom: '1.5rem', color: 'white', maxWidth: '800px' }}>
                         LEADING EARTHMOVING CONTRACTORS IN <span className="hero-highlight" style={{ color: '#FF9F1C' }}>COIMBATORE</span>

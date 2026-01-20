@@ -7,9 +7,15 @@ Sitemap: https://btsearthmovers.com/sitemap.xml
 # Disallow admin pages
 Disallow: /admin
 
-# Allow all equipment and service pages
+# Allow all important pages for BTS Earth Movers
 Allow: /equipment
 Allow: /projects
 Allow: /about
 Allow: /contact
 Allow: /booking
+
+# Allow verification file
+Allow: /googlee881b3a1b9f2810b.html
+
+# Allow catalog download
+Allow: /Catlog.pdf
