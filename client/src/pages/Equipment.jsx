@@ -67,7 +67,7 @@ const Equipment = () => {
                     </p>
                     
                     {/* Catalog Download Button */}
-                    <div style={{ marginTop: '1.5rem' }}>
+                    {/* <div style={{ marginTop: '1.5rem' }}>
                         <a 
                             href="/Catlog.pdf" 
                             download="BTS-Earth-Movers-Equipment-Catalog.pdf"
@@ -96,7 +96,7 @@ const Equipment = () => {
                         >
                             📄 Download Equipment Catalog
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Desktop Filter Bar */}

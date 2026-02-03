@@ -90,10 +90,10 @@ const Home = () => {
                     <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1', marginBottom: '1.5rem', color: 'white', maxWidth: '800px' }}>
                         LEADING EARTHMOVING CONTRACTORS IN <span className="hero-highlight" style={{ color: '#FF9F1C' }}>COIMBATORE</span>
                     </h1>
-                    <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '600px', color: '#ddd' }}>
+                    <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '800px', color: '#ddd' }}>
                         BTS Earth Movers is a trusted earthmoving contractor based in Tamil Nadu with strong operational presence in Coimbatore. We specialize in excavation, site development, and road construction services. With over 15 years of experience and modern heavy machinery fleet, we execute infrastructure projects across Tamil Nadu and have the capability to serve construction needs anywhere in India.
                     </p>
-                    <div className="hero-buttons" style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
                         <Link to="/equipment" className="btn hero-btn-primary" style={{ padding: '16px 32px', fontSize: '1.1rem' }}>
                             Browse Equipment <ArrowRight size={20} style={{ verticalAlign: 'middle', marginLeft: '5px' }} />
                         </Link>
