@@ -250,16 +250,16 @@ const Navbar = () => {
     right: 10px;
     width: 220px;
 
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
 
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
     flex-direction: column;
     gap: 16px;
@@ -274,7 +274,22 @@ const Navbar = () => {
   }
 
   .nav-links a {
-    color: #111;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover {
+    color: #FF9F1C;
+  }
+
+  .nav-links .lang-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
+  .nav-links .lang-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
   }
 
   .nav-links .quote-btn {

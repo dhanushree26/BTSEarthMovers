@@ -54,9 +54,9 @@ const Home = () => {
                 alignItems: 'center',
                 color: 'white',
                 overflow: 'hidden',
-                background: '#333', // Fallback background
-                marginTop: '-100px', // Offset body padding
-                paddingTop: '100px' // Maintain content spacing
+                background: '#333',
+                marginTop: '-100px',
+                paddingTop: '0'
             }}>
                 {/* Video Background */}
                 <video 

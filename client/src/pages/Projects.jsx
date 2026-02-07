@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { projectsData } from '../projectsData';
 import './Projects.css';
 
@@ -8,25 +7,20 @@ const Projects = () => {
   const ongoingProjects = projectsData.filter(project => project.status === "Ongoing");
 
   const ProjectCard = ({ project }) => (
-    <Link to={`/projects/${project.id}`} className="project-card-link">
-      <div className="project-card">
-        <div className="project-header">
-          <div className="project-category">{project.category}</div>
-          <div className={`project-status ${project.status.toLowerCase()}`}>
-            {project.status}
-          </div>
-        </div>
-        <h3 className="project-name">{project.name}</h3>
-        <div className="project-location">
-          <span className="location-icon">📍</span>
-          {project.location}
-        </div>
-        <p className="project-summary">{project.summary}</p>
-        <div className="project-card-footer">
-          <span className="view-details">View Details →</span>
+    <div className="project-card">
+      <div className="project-header">
+        <div className="project-category">{project.category}</div>
+        <div className={`project-status ${project.status.toLowerCase()}`}>
+          {project.status}
         </div>
       </div>
-    </Link>
+      <h3 className="project-name">{project.name}</h3>
+      <div className="project-location">
+        <span className="location-icon">📍</span>
+        {project.location}
+      </div>
+      <p className="project-summary">{project.summary}</p>
+    </div>
   );
 
   return (

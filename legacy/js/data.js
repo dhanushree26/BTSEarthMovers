@@ -1,17 +1,17 @@
 const equipmentData = [
-    {
-        id: 'bd-01',
-        type: 'bulldozer',
-        name: 'CAT D6 Dozer',
-        shortDesc: 'Heavy-duty dozer for large earthmoving projects.',
-        price: 850,
-        image: 'https://images.unsplash.com/photo-1527685216219-c8b4c0d486d9?q=80&w=800&auto=format&fit=crop', // Placeholder
-        specs: {
-            power: '215 HP',
-            weight: '41,000 lbs',
-            bladeWidth: '10.5 ft'
-        }
-    },
+    // {
+    //     id: 'bd-01',
+    //     type: 'bulldozer',
+    //     name: 'CAT D6 Dozer',
+    //     shortDesc: 'Heavy-duty dozer for large earthmoving projects.',
+    //     price: 850,
+    //     image: 'https://images.unsplash.com/photo-1527685216219-c8b4c0d486d9?q=80&w=800&auto=format&fit=crop', // Placeholder
+    //     specs: {
+    //         power: '215 HP',
+    //         weight: '41,000 lbs',
+    //         bladeWidth: '10.5 ft'
+    //     }
+    // },
     {
         id: 'ex-01',
         type: 'excavator',

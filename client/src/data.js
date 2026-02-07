@@ -137,21 +137,21 @@ export const equipmentData = [
         specs: { quantity: '2 Nos', category: 'Compaction & Support Equipment' },
         alt: 'Skid steer loader rental for material handling in Coimbatore'
     },
-    {
-        id: 'dz-01',
-        type: 'dozer',
-        name: 'Bulldozer Rental',
-        shortDesc: 'Bulldozer rental for earthmoving and grading operations in Tamil Nadu construction sites.',
-        image: 'https://images.unsplash.com/photo-1527685216219-c8b4c0d486d9?q=80&w=800&auto=format&fit=crop',
-        specs: { quantity: '1 No', category: 'Compaction & Support Equipment' },
-        alt: 'Bulldozer rental for earthmoving and grading in Coimbatore'
-    },
+    // {
+    //     id: 'dz-01',
+    //     type: 'dozer',
+    //     name: 'Bulldozer Rental',
+    //     shortDesc: 'Bulldozer rental for earthmoving and grading operations in Tamil Nadu construction sites.',
+    //     image: 'https://images.unsplash.com/photo-1527685216219-c8b4c0d486d9?q=80&w=800&auto=format&fit=crop',
+    //     specs: { quantity: '1 No', category: 'Compaction & Support Equipment' },
+    //     alt: 'Bulldozer rental for earthmoving and grading in Coimbatore'
+    // },
     {
         id: 'cr-01',
         type: 'crane',
         name: 'Mobile Crane Rental ',
         shortDesc: 'Mobile crane rental for lifting and positioning heavy materials in Tamil Nadu projects.',
-        image: 'https://images.unsplash.com/photo-1582234032483-cda9c4768393?q=80&w=800&auto=format&fit=crop',
+        image: '/mobilecrane.png',
         specs: { quantity: '1 No', category: 'Compaction & Support Equipment' },
         alt: 'Mobile crane rental for heavy lifting in Coimbatore construction'
     },
@@ -160,7 +160,7 @@ export const equipmentData = [
         type: 'trailer',
         name: 'Heavy Equipment Trailer Rental',
         shortDesc: 'Heavy-duty trailer rental for equipment transportation across Coimbatore and Tamil Nadu.',
-        image: 'https://images.unsplash.com/photo-1591796796544-77cc67773299?q=80&w=800&auto=format&fit=crop',
+        image: '/trailor.png',
         specs: { quantity: '4 Nos', category: 'Compaction & Support Equipment' },
         alt: 'Heavy equipment trailer rental for transportation in Coimbatore'
     },
@@ -169,7 +169,7 @@ export const equipmentData = [
         type: 'tipper',
         name: 'Tipper Truck Rental ',
         shortDesc: 'Tipper truck rental for material hauling and dumping.',
-        image: 'https://images.unsplash.com/photo-1591796796544-77cc67773299?q=80&w=800&auto=format&fit=crop',
+        image: '/Tippertruck.png',
         specs: { quantity: '9 Nos', category: 'Compaction & Support Equipment' },
         alt: 'Tipper truck rental for material hauling in Coimbatore'
     }

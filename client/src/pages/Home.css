@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
+/* ================= HERO VIDEO FULL COVERAGE ================= */
+.hero-section {
+  margin-top: -100px !important;
+  padding-top: 0 !important;
+}
+
+.hero-video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    margin-top: -80px !important;
+  }
+}
+
 /* ================= STATS SECTION ================= */
 
 .stats-section {
